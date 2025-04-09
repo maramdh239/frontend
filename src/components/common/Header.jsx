@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import AddModelModal from './AddModelModal';
 import MobileNav from './MobileNav';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faBars, 
-  faChevronDown, 
-  faUser, 
-  faGear, 
-  faSignOut, 
-  faPlus, 
+import {
+  faBars,
+  faChevronDown,
+  faUser,
+  faGear,
+  faSignOut,
+  faPlus,
   faBell,
   faFolder,
   faCreditCard,
   faShieldAlt,
-  faQuestionCircle 
+  faQuestionCircle
 } from '@fortawesome/free-solid-svg-icons';
 
 const Header = ({ user, onLogout }) => {
@@ -69,23 +69,23 @@ const Header = ({ user, onLogout }) => {
             </div>
           </div>
         </div>
-        
+
         <div className="container position-relative">
           <div className="row align-items-center py-3" style={{ borderBottom: '1px solid var(--color-border)' }}>
             {/* Logo Section */}
             <div className="col-lg-2 col-md-6 col-6">
               <div className="logo">
                 <Link to="/" className="d-inline-block">
-                  <img 
-                    className="logo-light img-fluid" 
-                    src="/src/assets/images/logo/logo5.png" 
-                    alt="ChatBot Logo" 
+                  <img
+                    className="logo-light img-fluid"
+                    src="/src/assets/images/logo/logo5.png"
+                    alt="ChatBot Logo"
                     style={{ maxHeight: "100px" }}
                   />
-                  <img 
-                    className="logo-dark img-fluid" 
-                    src="/src/assets/images/light/logo/logoo2.png" 
-                    alt="ChatBot Logo" 
+                  <img
+                    className="logo-dark img-fluid"
+                    src="/src/assets/images/light/logo/logoo2.png"
+                    alt="ChatBot Logo"
                     style={{ maxHeight: "130px" }}
                   />
                 </Link>
@@ -99,12 +99,12 @@ const Header = ({ user, onLogout }) => {
                   <li className="nav-item px-3">
                     <Link to="/" className="nav-link d-flex align-items-center position-relative fw-medium text-decoration-none py-2" style={{ color: 'var(--color-heading)' }}>
                       Home
-                      <span className="nav-indicator position-absolute rounded-pill" 
+                      <span className="nav-indicator position-absolute rounded-pill"
                         style={{ height: "3px", width: "70%", bottom: "0", left: "15%", transition: "all 0.3s ease", backgroundColor: 'var(--color-primary)' }}>
                       </span>
                     </Link>
                   </li>
-                
+
                   <li className="nav-item px-3">
                     <Link to="/blog" className="nav-link fw-medium text-decoration-none py-2" style={{ color: 'var(--color-body)' }}>AI Models</Link>
                   </li>
@@ -112,10 +112,10 @@ const Header = ({ user, onLogout }) => {
                     <Link to="/how-to-use" className="nav-link fw-medium text-decoration-none py-2" style={{ color: 'var(--color-body)' }}>How to use</Link>
                   </li>*/}
                   <li className="nav-item px-3">
-          <Link to="/contact" className="nav-link fw-medium text-decoration-none py-2" style={{ color: 'var(--color-body)' }}>
-            Contact Us
-          </Link>
-        </li>
+                    <Link to="/contact" className="nav-link fw-medium text-decoration-none py-2" style={{ color: 'var(--color-body)' }}>
+                      Contact Us
+                    </Link>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -126,28 +126,28 @@ const Header = ({ user, onLogout }) => {
                 {user ? (
                   <div className="user-menu d-flex align-items-center">
                     {/* Add Model Button with hover effect */}
-                    <button 
+                    <button
                       className="btn btn-sm rounded-circle me-3 d-flex justify-content-center align-items-center"
-                      style={{ 
-                        width: "50px",  // Augmentation de la taille
-                        height: "50px", // Augmentation de la taille
-                        backgroundColor: '#00BFFF',  // Bleu ciel (hex code)
-                        color: 'white',  // Texte en blanc
-                        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', // Ombre légère
-                        transition: 'all 0.3s ease' // Transition améliorée
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        backgroundColor: '#00BFFF',
+                        color: 'white',
+                        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+                        transition: 'all 0.3s ease'
                       }}
                       onClick={() => setShowAddModel(true)}
                       title="Add New Model"
                     >
                       <FontAwesomeIcon icon={faPlus} />
                     </button>
-                    
+
                     {/* Notifications Button with Indicator */}
-                    <button 
+                    <button
                       className="btn btn-sm rounded-circle me-3 d-none d-md-flex justify-content-center align-items-center position-relative"
-                      style={{ 
-                        width: "40px", 
-                        height: "40px", 
+                      style={{
+                        width: "40px",
+                        height: "40px",
                         backgroundColor: 'var(--color-lessdark)',
                         color: 'var(--color-body)',
                         boxShadow: 'var(--shadow-light)',
@@ -156,11 +156,11 @@ const Header = ({ user, onLogout }) => {
                       title="Notifications"
                     >
                       <FontAwesomeIcon icon={faBell} />
-                      <span className="position-absolute d-flex align-items-center justify-content-center animate__animated animate__pulse animate__infinite" 
-                        style={{ 
-                          width: "20px", 
-                          height: "20px", 
-                          borderRadius: "50%", 
+                      <span className="position-absolute d-flex align-items-center justify-content-center animate__animated animate__pulse animate__infinite"
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          borderRadius: "50%",
                           fontSize: "10px",
                           top: "-5px",
                           right: "-5px",
@@ -170,21 +170,21 @@ const Header = ({ user, onLogout }) => {
                         }}
                       >3</span>
                     </button>
-                    
+
                     {/* User Profile Menu */}
                     <div className="profile-menu position-relative" ref={profileMenuRef}>
-                      <div 
+                      <div
                         className="profile-image-wrapper cursor-pointer"
                         onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
                       >
-                        <img 
-                          src={user.avatar || "/src/assets/images/team/team-01sm.jpg"} 
-                          alt={user.name} 
+                        <img
+                          src={user.avatar || "/src/assets/images/team/team-01sm.jpg"}
+                          alt={user.name}
                           className="rounded-circle profile-image"
-                          width="45" // Increased size
-                          height="45" // Increased size
-                          style={{ 
-                            objectFit: "cover", 
+                          width="45"
+                          height="45"
+                          style={{
+                            objectFit: "cover",
                             border: "2px solid var(--color-lessdark)",
                             boxShadow: 'var(--shadow-light)',
                             cursor: "pointer",
@@ -193,14 +193,14 @@ const Header = ({ user, onLogout }) => {
                           }}
                         />
                       </div>
-                      
+
                       {isProfileMenuOpen && (
-                        <div className="profile-dropdown border-0 rounded-lg py-0 mt-2 animate__animated animate__fadeIn" 
-                          style={{ 
-                            position: "absolute", 
-                            right: 0, 
-                            top: "100%", 
-                            width: "360px", // Increased width
+                        <div className="profile-dropdown border-0 rounded-lg py-0 mt-2 animate__animated animate__fadeIn"
+                          style={{
+                            position: "absolute",
+                            right: 0,
+                            top: "100%",
+                            width: "360px",
                             zIndex: 1000,
                             backgroundColor: 'var(--color-dark)',
                             boxShadow: 'var(--dark-shadow-1)',
@@ -208,21 +208,21 @@ const Header = ({ user, onLogout }) => {
                           }}
                         >
                           {/* Profile Header Section */}
-                          <div className="p-4 border-bottom" 
-                            style={{ 
-                              background: 'var(--dark-gradient-2)', 
+                          <div className="p-4 border-bottom"
+                            style={{
+                              background: 'var(--dark-gradient-2)',
                               borderColor: 'var(--color-border)'
                             }}
                           >
                             <div className="d-flex align-items-center">
-                              <img 
-                                src={user.avatar || "/src/assets/images/team/team-01sm.jpg"} 
-                                alt={user.name} 
+                              <img
+                                src={user.avatar || "/src/assets/images/team/team-01sm.jpg"}
+                                alt={user.name}
                                 className="rounded-circle me-3"
-                                width="70" // Increased size
-                                height="70" // Increased size
-                                style={{ 
-                                  objectFit: "cover", 
+                                width="70"
+                                height="70"
+                                style={{
+                                  objectFit: "cover",
                                   border: "3px solid var(--color-dark)",
                                   boxShadow: 'var(--shadow-light)'
                                 }}
@@ -230,9 +230,9 @@ const Header = ({ user, onLogout }) => {
                               <div>
                                 <h6 className="mb-1 fw-bold" style={{ color: 'var(--color-heading)', fontSize: '18px' }}>{user.name}</h6>
                                 <p className="mb-1" style={{ color: 'var(--color-body)', fontSize: '14px' }}>{user.email || "user@example.com"}</p>
-                                <span className="badge px-3 py-1 rounded-pill" 
-                                  style={{ 
-                                    background: 'var(--color-dark)', 
+                                <span className="badge px-3 py-1 rounded-pill"
+                                  style={{
+                                    background: 'var(--color-dark)',
                                     color: 'var(--color-primary)',
                                     fontSize: '12px'
                                   }}
@@ -240,7 +240,7 @@ const Header = ({ user, onLogout }) => {
                               </div>
                             </div>
                           </div>
-                          
+
                           {/* Credits Section */}
                           <div className="px-4 py-3">
                             <div className="d-flex justify-content-between mb-2 align-items-center">
@@ -248,13 +248,13 @@ const Header = ({ user, onLogout }) => {
                               <span className="fw-bold" style={{ color: 'var(--color-heading)', fontSize: '15px' }}>750 / 1,000</span>
                             </div>
                             <div className="progress mb-2" style={{ height: "10px", borderRadius: "5px", overflow: "hidden", backgroundColor: 'var(--color-lessdark)' }}>
-                              <div className="progress-bar" role="progressbar" 
-                                style={{ 
-                                  width: "75%", 
+                              <div className="progress-bar" role="progressbar"
+                                style={{
+                                  width: "75%",
                                   background: 'var(--dark-gradient-2)'
-                                }} 
-                                aria-valuenow="75" 
-                                aria-valuemin="0" 
+                                }}
+                                aria-valuenow="75"
+                                aria-valuemin="0"
                                 aria-valuemax="100">
                               </div>
                             </div>
@@ -262,22 +262,22 @@ const Header = ({ user, onLogout }) => {
                               <a href="#" className="text-decoration-none" style={{ color: 'var(--color-primary)', fontSize: '14px' }}>Buy more credits</a>
                             </div>
                           </div>
-                          
+
                           <div className="dropdown-divider my-0" style={{ borderColor: 'var(--color-border)' }}></div>
-                          
+
                           {/* Menu Options */}
                           <div className="p-3">
-                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all" 
-                              to="/profile" 
-                              style={{ 
-                                color: 'var(--color-body)', 
+                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all"
+                              to="/profile"
+                              style={{
+                                color: 'var(--color-body)',
                                 transition: 'var(--transition)'
                               }}
                             >
                               <div className="icon-wrapper rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
-                                style={{ 
-                                  width: "40px", // Increased size
-                                  height: "40px", // Increased size
+                                style={{
+                                  width: "40px",
+                                  height: "40px",
                                   backgroundColor: 'rgba(74, 144, 226, 0.1)'
                                 }}
                               >
@@ -288,18 +288,18 @@ const Header = ({ user, onLogout }) => {
                                 <small className="d-block" style={{ color: 'var(--color-body)', fontSize: '14px' }}>Manage your account</small>
                               </div>
                             </Link>
-                            
-                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all" 
+
+                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all"
                               to="/projects"
-                              style={{ 
-                                color: 'var(--color-body)', 
+                              style={{
+                                color: 'var(--color-body)',
                                 transition: 'var(--transition)'
                               }}
                             >
                               <div className="icon-wrapper rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
-                                style={{ 
-                                  width: "40px", // Increased size
-                                  height: "40px", // Increased size
+                                style={{
+                                  width: "40px",
+                                  height: "40px",
                                   backgroundColor: 'rgba(153, 194, 255, 0.1)'
                                 }}
                               >
@@ -310,18 +310,18 @@ const Header = ({ user, onLogout }) => {
                                 <small className="d-block" style={{ color: 'var(--color-body)', fontSize: '14px' }}>Manage your AI projects</small>
                               </div>
                             </Link>
-                            
-                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all" 
+
+                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all"
                               to="/billing"
-                              style={{ 
-                                color: 'var(--color-body)', 
+                              style={{
+                                color: 'var(--color-body)',
                                 transition: 'var(--transition)'
                               }}
                             >
                               <div className="icon-wrapper rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
-                                style={{ 
-                                  width: "40px", // Increased size
-                                  height: "40px", // Increased size
+                                style={{
+                                  width: "40px",
+                                  height: "40px",
                                   backgroundColor: 'rgba(255, 200, 118, 0.1)'
                                 }}
                               >
@@ -332,18 +332,18 @@ const Header = ({ user, onLogout }) => {
                                 <small className="d-block" style={{ color: 'var(--color-body)', fontSize: '14px' }}>Manage your subscription</small>
                               </div>
                             </Link>
-                            
-                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all" 
+
+                            <Link className="dropdown-item py-3 px-3 rounded-md d-flex align-items-center transition-all"
                               to="/settings"
-                              style={{ 
-                                color: 'var(--color-body)', 
+                              style={{
+                                color: 'var(--color-body)',
                                 transition: 'var(--transition)'
                               }}
                             >
                               <div className="icon-wrapper rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
-                                style={{ 
-                                  width: "40px", // Increased size
-                                  height: "40px", // Increased size
+                                style={{
+                                  width: "40px",
+                                  height: "40px",
                                   backgroundColor: 'rgba(27, 162, 219, 0.1)'
                                 }}
                               >
@@ -355,35 +355,37 @@ const Header = ({ user, onLogout }) => {
                               </div>
                             </Link>
                           </div>
-                          
+
                           <div className="dropdown-divider my-0" style={{ borderColor: 'var(--color-border)' }}></div>
-                          
+
                           {/* Sign Out Button */}
-                          <div className="p-3">
-                            <button 
-                              className="btn w-100 d-flex align-items-center justify-content-center py-2 rounded-md" 
-                              onClick={onLogout}
-                              style={{ 
-                                backgroundColor: 'var(--color-lessdark)', 
-                                color: 'var(--color-danger)',
-                                fontSize: '15px',
-                                transition: 'var(--transition)'
-                              }}
-                            >
-                              <FontAwesomeIcon icon={faSignOut} className="me-2" /> Sign out
-                            </button>
-                          </div>
+                                // In the Header component, update the sign out button in the dropdown menu:
+                          <button
+                            className="btn w-100 d-flex align-items-center justify-content-center py-2 rounded-md"
+                            onClick={() => {
+                              onLogout(); // Call the logout handler
+                              setIsProfileMenuOpen(false); // Close the dropdown
+                            }}
+                            style={{
+                              backgroundColor: 'var(--color-lessdark)',
+                              color: 'var(--color-danger)',
+                              fontSize: '15px',
+                              transition: 'var(--transition)'
+                            }}
+                          >
+                            <FontAwesomeIcon icon={faSignOut} className="me-2" /> Sign out
+                          </button>
                         </div>
                       )}
                     </div>
                   </div>
                 ) : (
                   <div className="header-btn">
-                    <Link 
+                    <Link
                       className="btn btn-md fw-medium"
                       to="/signin"
-                      style={{ 
-                        borderRadius: "30px", 
+                      style={{
+                        borderRadius: "30px",
                         padding: "10px 24px",
                         background: "var(--dark-gradient-2)",
                         color: "var(--color-white)",
@@ -395,14 +397,14 @@ const Header = ({ user, onLogout }) => {
                     </Link>
                   </div>
                 )}
-                
+
                 {/* Mobile Menu Toggle */}
                 <div className="mobile-menu-bar ms-3 d-lg-none">
-                  <button 
+                  <button
                     className="btn rounded-circle d-flex justify-content-center align-items-center"
-                    style={{ 
-                      width: "40px", 
-                      height: "40px", 
+                    style={{
+                      width: "40px",
+                      height: "40px",
                       backgroundColor: 'var(--color-lessdark)',
                       color: 'var(--color-body)',
                       boxShadow: 'var(--shadow-light)',
@@ -417,19 +419,20 @@ const Header = ({ user, onLogout }) => {
             </div>
           </div>
         </div>
-        
+
         {showAddModel && (
-          <AddModelModal 
-            show={showAddModel} 
-            onHide={() => setShowAddModel(false)} 
+          <AddModelModal
+            show={showAddModel}
+            onHide={() => setShowAddModel(false)}
           />
         )}
       </header>
 
-      <MobileNav 
+      <MobileNav
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
         user={user}
+        onLogout={onLogout}
       />
     </>
   );
