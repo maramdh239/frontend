@@ -19,7 +19,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   const [theme, setTheme] = useState('dark');
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("maram");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
